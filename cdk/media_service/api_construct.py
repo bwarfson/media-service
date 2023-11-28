@@ -9,6 +9,9 @@ from constructs import Construct
 import cdk.media_service.constants as constants
 from cdk.media_service.api_db_construct import ApiDbConstruct
 from cdk.media_service.monitoring import CrudMonitoring
+from cdk.media_service.s3_construct import S3Construct
+from cdk.media_service.s3_notifications_construct import S3NotificationsConstruct
+from cdk.media_service.sqs_construct import SQSConstruct
 
 
 class ApiConstruct(Construct):
@@ -16,6 +19,9 @@ class ApiConstruct(Construct):
     def __init__(self, scope: Construct, id_: str, appconfig_app_name: str) -> None:
         super().__init__(scope, id_)
         self.id_ = id_
+        self.s3 = S3Construct(self, f'{id_}bucket')
+        self.sqs = SQSConstruct(self, f'{id_}queue')
+        S3NotificationsConstruct(self, f'{id_}s3_notifications', self.s3.temp_bucket, self.sqs.queue)
         self.api_db = ApiDbConstruct(self, f'{id_}db')
         self.lambda_role = self._build_lambda_role(self.api_db.db, self.api_db.idempotency_db)
         self.common_layer = self._build_common_layer()

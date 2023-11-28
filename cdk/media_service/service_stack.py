@@ -26,7 +26,7 @@ class ServiceStack(Stack):
         )
         self.api = ApiConstruct(
             self,
-            get_construct_name(stack_prefix=id, construct_name='Crud'),
+            get_construct_name(stack_prefix=id, construct_name='crud'),
             self.dynamic_configuration.app_name,
         )
 

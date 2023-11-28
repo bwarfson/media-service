@@ -8,7 +8,7 @@ from cdk.media_service.constants import CONFIGURATION_NAME, ENVIRONMENT, SERVICE
 from media_service.handlers.utils.dynamic_configuration import parse_configuration
 from media_service.models.exceptions import DynamicConfigurationException
 
-MOCKED_SCHEMA = {'region': 'us-east-1'}
+MOCKED_SCHEMA = {'region': 'us-west-2'}
 
 
 class MockedSchemaModel(BaseModel):

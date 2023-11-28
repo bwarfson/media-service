@@ -16,10 +16,10 @@ def get_username() -> str:
 
 def get_stack_name() -> str:
     repo = Repo(Path.cwd())
-    username = get_username()
-    cicd_environment = os.getenv('ENVIRONMENT', 'dev')
+    username = get_username().lower()
+    cicd_environment = os.getenv('ENVIRONMENT', 'dev').lower()
     try:
-        branch_name = f'{repo.active_branch}'.replace('/', '-').replace('_', '-')
+        branch_name = f'{repo.active_branch}'.replace('/', '-').replace('_', '-').lower()
         return f'{username}-{branch_name}-{constants.SERVICE_NAME}-{cicd_environment}'
     except TypeError:
         # we're running in detached mode (HEAD)
