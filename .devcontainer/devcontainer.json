@@ -1,0 +1,16 @@
+{
+    "name": "Default Linux Universal",
+    "image": "mcr.microsoft.com/devcontainers/universal:linux",
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {"version": "3.11.6"},
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers-contrib/features/poetry:2": {},
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/powershell:1": {},
+        "ghcr.io/devcontainers-contrib/features/aws-cdk:2": {},
+        "ghcr.io/devcontainers-contrib/features/localstack:2": {},
+        "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+        "ghcr.io/customink/codespaces-features/sam-cli": {}
+    },
+    "postCreateCommand": "./.devcontainer/scripts/install-dependencies.sh"
+}
