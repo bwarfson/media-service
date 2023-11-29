@@ -8,6 +8,7 @@ from media_service.handlers.utils.observability import logger
 from media_service.models.exceptions import DynamicConfigurationException, InternalServerException
 
 ORDERS_PATH = '/api/orders/'
+MEDIA_PATH = '/api/media/'
 
 app = APIGatewayRestResolver()
 

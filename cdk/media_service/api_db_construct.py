@@ -35,10 +35,42 @@ class ApiDbConstruct(Construct):
             self,
             table_id,
             table_name=table_id,
-            partition_key=dynamodb.Attribute(name='id', type=dynamodb.AttributeType.STRING),
+            partition_key=dynamodb.Attribute(
+                name='PK',
+                type=dynamodb.AttributeType.STRING
+            ),
+            sort_key=dynamodb.Attribute(
+                name='SK',
+                type=dynamodb.AttributeType.STRING
+            ),
             billing_mode=dynamodb.BillingMode.PAY_PER_REQUEST,
             point_in_time_recovery=True,
             removal_policy=RemovalPolicy.DESTROY,
         )
+
+        table.add_global_secondary_index(
+            index_name='GSI1',
+            partition_key=dynamodb.Attribute(
+                name='GSI1PK',
+                type=dynamodb.AttributeType.STRING
+            ),
+            sort_key=dynamodb.Attribute(
+                name='GSI1SK',
+                type=dynamodb.AttributeType.STRING
+            )
+        )
+
+        table.add_global_secondary_index(
+            index_name='GSI2',
+            partition_key=dynamodb.Attribute(
+                name='GSI2PK',
+                type=dynamodb.AttributeType.STRING
+            ),
+            sort_key=dynamodb.Attribute(
+                name='GSI2SK',
+                type=dynamodb.AttributeType.STRING
+            )
+        )
+
         CfnOutput(self, id=constants.TABLE_NAME_OUTPUT, value=table.table_name).override_logical_id(constants.TABLE_NAME_OUTPUT)
         return table
