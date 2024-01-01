@@ -333,19 +333,19 @@ typeguard = ">=2.13.3,<2.14.0"
 
 [[package]]
 name = "cdk-nag"
-version = "2.27.202"
+version = "2.27.227"
 description = "Check CDK v2 applications for best practices using a combination on available rule packs."
 optional = false
 python-versions = "~=3.8"
 files = [
-    {file = "cdk-nag-2.27.202.tar.gz", hash = "sha256:78eef7ea1d1a72d1e34fde60a273182906287f667ee9036a68d113c411891f28"},
-    {file = "cdk_nag-2.27.202-py3-none-any.whl", hash = "sha256:63738b03b86ea9b8b263bb2f8dc88e834c80831524828b989089288703a99c3f"},
+    {file = "cdk-nag-2.27.227.tar.gz", hash = "sha256:9297618e605c1e77bf5a4c12d10846384e563ba4b785ff2f8f16ac26c0e8b58d"},
+    {file = "cdk_nag-2.27.227-py3-none-any.whl", hash = "sha256:1133205415d74912b2bcc69823ce8e613549c8fff9058776827afd12d4013b6f"},
 ]
 
 [package.dependencies]
 aws-cdk-lib = ">=2.78.0,<3.0.0"
 constructs = ">=10.0.5,<11.0.0"
-jsii = ">=1.92.0,<2.0.0"
+jsii = ">=1.93.0,<2.0.0"
 publication = ">=0.0.3"
 typeguard = ">=2.13.3,<2.14.0"
 
@@ -817,18 +817,18 @@ files = [
 
 [[package]]
 name = "jsii"
-version = "1.92.0"
+version = "1.93.0"
 description = "Python client for jsii runtime"
 optional = false
 python-versions = "~=3.8"
 files = [
-    {file = "jsii-1.92.0-py3-none-any.whl", hash = "sha256:30deaea011e146e1d4c0dbb35bd7effd4d292cef676052e5672a825fc1aaaebf"},
-    {file = "jsii-1.92.0.tar.gz", hash = "sha256:2b5205c0fec87e1a9a9f283f60577ad172d7124bb614b8cdadc963306e1ac75f"},
+    {file = "jsii-1.93.0-py3-none-any.whl", hash = "sha256:d3cba8c18f2bb4eb94aa41a202b4eb14a561a3a347ed086294a6c9d5d17c90d6"},
+    {file = "jsii-1.93.0.tar.gz", hash = "sha256:15349b329b79699c88a6041c8987a4470e6cfa544e5c1e4a126bc5be9f48a623"},
 ]
 
 [package.dependencies]
 attrs = ">=21.2,<24.0"
-cattrs = ">=1.8,<23.2"
+cattrs = ">=1.8,<23.3"
 importlib-resources = ">=5.2.0"
 publication = ">=0.0.3"
 python-dateutil = "*"
